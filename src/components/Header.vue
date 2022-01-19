@@ -1,25 +1,45 @@
 <template>
-<div class="container-fluid">
-  <input id="search" type="text" v-model="inputSearch" name="search">
-  <button @click="$emit('doSearch', inputSearch)">Cerca</button>
-</div>
+  <div class="container-fluid">
+          <div class="col-3">
+              <input @keyup.enter="getAxios" v-model="inputSearch" type="text">
+              <button @click="getAxios">Cerca</button>
+          </div>
+  </div>
 </template>
 
 <script>
+import axios from 'axios';
+
+
 export default {
     name: "Header",
-    props: {
-        inputValue: {
-            type: String,
-        }
-    },
     data() {
         return {
-            inputSearch:'',
+            inputSearch: "",
+            movies: [], 
         }
+    },
+    methods: {
+      getAxios: function () {
+          axios.get("https://api.themoviedb.org/3/search/movie?api_key=7bb7bbc95342fb7ad4cf8fdde2b711f0",
+          {
+              params: {
+                  query: this.inputSearch
+              }
+          })
+          .then(result => {
+            this.movies = result.data.results
+            this.$emit("sendSelect", this.movies)
+            
+          })
+          .catch(error => {
+            console.error(error);               
+          })
+      }
     },
 }
 </script>
 
-<style lang="scss">
+<style>
+
 </style>

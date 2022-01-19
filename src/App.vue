@@ -1,15 +1,18 @@
 <template>
   <div id="app">
-    <div class="container-fluid">
-      <Header @doSearch="setSearch($event)" :inputValue="completedQuery" />
-      <Main />
-    </div>
+  <Header 
+  @sendSelect="getSelect($event)"
+  />
+  <Main 
+  :searchHeader="valueHeader"
+  />
   </div>
 </template>
 
 <script>
-import Main from "./components/Main.vue";
-import Header from "./components/Header.vue";
+import Header from './components/Header.vue'
+import Main from './components/Main.vue'
+
 export default {
   name: "App",
   components: {
@@ -18,19 +21,17 @@ export default {
   },
   data() {
     return {
-      completedQuery: '',
-      staticApi: 'https://api.themoviedb.org/3/search/movie?api_key=7bb7bbc95342fb7ad4cf8fdde2b711f0&query=',
+      valueHeader: null
     }
   },
   methods: {
-    setSearch(value) {
-      this.completedQuery = this.staticApi + value;
+    getSelect(value) {
+      this.valueHeader = value
     }
   },
 };
 </script>
 
 <style lang="scss">
-@import "~bootstrap/scss/bootstrap"
-
+  @import "~bootstrap/scss/bootstrap";
 </style>
