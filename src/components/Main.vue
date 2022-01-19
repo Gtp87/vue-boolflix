@@ -1,17 +1,13 @@
 <template>
-<div>
-</div>
+    <div></div>
 </template>
 
 <script>
-// import axios from 'axios';
+// import axios from "axios";
 export default {
-    name: 'Main',
-    components: {
-    }
+    nome:"Main",
 }
 </script>
 
-<style>
-
+<style lang="scss">
 </style>

@@ -1,17 +1,25 @@
 <template>
-  <div>
-    <input type="text" placeholder="Cerca film">
-    <button>Cerca</button>
-  </div>
+<div class="container-fluid">
+  <input id="search" type="text" v-model="inputSearch" name="search">
+  <button @click="$emit('doSearch', inputSearch)">Cerca</button>
+</div>
 </template>
 
 <script>
 export default {
-    name: 'Header'
-
+    name: "Header",
+    props: {
+        inputValue: {
+            type: String,
+        }
+    },
+    data() {
+        return {
+            inputSearch:'',
+        }
+    },
 }
 </script>
 
-<style>
-
+<style lang="scss">
 </style>
