@@ -1,5 +1,8 @@
 <template>
-  <div></div>
+  <div>
+    <input type="text" placeholder="Cerca film">
+    <button>Cerca</button>
+  </div>
 </template>
 
 <script>
