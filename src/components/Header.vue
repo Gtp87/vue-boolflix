@@ -1,10 +1,10 @@
 <template>
-  <div class="container-fluid">
-          <div class="col-3">
-              <input @keyup.enter="getMerged" v-model="inputSearch" type="text">
-              <button @click="getMerged">Cerca</button>
-          </div>
-  </div>
+<div class="container-fluid">
+        <div class="col-3">
+            <input @keyup.enter="getMerged" v-model="inputSearch" type="text">
+            <button @click="getMerged">Cerca</button>
+        </div>
+</div>
 </template>
 
 <script>
@@ -15,11 +15,11 @@ export default {
     name: "Header",
     data() {
         return {
-          query: 'https://api.themoviedb.org/3/search/',
-          api_key: '7bb7bbc95342fb7ad4cf8fdde2b711f0',
-          language: 'en-US',
-          inputSearch: "",
-          mergedArray:{
+        query: 'https://api.themoviedb.org/3/search/',
+        api_key: '7bb7bbc95342fb7ad4cf8fdde2b711f0',
+        language: 'en-US',
+        inputSearch: "",
+        mergedArray:{
                 selectedMovies: [],
                 selectedTv: [],
             }, 
