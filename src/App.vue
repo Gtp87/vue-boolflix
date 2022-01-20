@@ -21,12 +21,16 @@ export default {
   },
   data() {
     return {
-      valueHeader: null
+      valueHeader: {
+        films:[],
+        series:[],
+      },
     }
   },
   methods: {
     getSelect(value) {
-      this.valueHeader = value
+      this.valueHeader.films = value.selectedMovies;
+      this.valueHeader.series = value.selectedTv;
     }
   },
 };
