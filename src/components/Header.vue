@@ -16,7 +16,7 @@ export default {
     data() {
         return {
           query: 'https://api.themoviedb.org/3/search/',
-          api_key: 'api_key=7bb7bbc95342fb7ad4cf8fdde2b711f0',
+          api_key: '7bb7bbc95342fb7ad4cf8fdde2b711f0',
           language: 'en-US',
           inputSearch: "",
           movies: [], 
@@ -24,13 +24,13 @@ export default {
     },
     methods: {
       getAxios: function () {
-          
-          axios.get("https://api.themoviedb.org/3/search/movie?api_key=7bb7bbc95342fb7ad4cf8fdde2b711f0",
-          {
-              params: {
-                  query: this.inputSearch
-              }
-          })
+          const endpoint = 'movie';
+            const parameters = {
+                api_key: this.api_key,
+                language: this.language,
+                query: this.inputSearch,
+        }
+        axios.get(`${this.query}${endpoint}`, { params: parameters })
           .then(result => {
             this.movies = result.data.results
             this.$emit("sendSelect", this.movies)
