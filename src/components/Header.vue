@@ -15,12 +15,16 @@ export default {
     name: "Header",
     data() {
         return {
-            inputSearch: "",
-            movies: [], 
+          query: 'https://api.themoviedb.org/3/search/',
+          api_key: 'api_key=7bb7bbc95342fb7ad4cf8fdde2b711f0',
+          language: 'en-US',
+          inputSearch: "",
+          movies: [], 
         }
     },
     methods: {
       getAxios: function () {
+          
           axios.get("https://api.themoviedb.org/3/search/movie?api_key=7bb7bbc95342fb7ad4cf8fdde2b711f0",
           {
               params: {
@@ -40,6 +44,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 
 </style>

@@ -34,4 +34,5 @@ export default {
 
 <style lang="scss">
   @import "~bootstrap/scss/bootstrap";
+  @import '~mdb-ui-kit/css/mdb.min.css';
 </style>

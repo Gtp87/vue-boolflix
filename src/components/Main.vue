@@ -10,7 +10,7 @@
             {{movie.original_title}}
         </div>
         <div>
-            {{movie.original_language}}
+        <i :class="(movie.original_language == 'en') ? 'flag flag-us' : `flag flag-${ movie.original_language }`"></i>
         </div>
         <div>
             {{movie.vote_average}}
@@ -36,6 +36,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 
 </style>
