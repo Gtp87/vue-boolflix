@@ -1,17 +1,21 @@
 <template>
-<div class="container-fluid">
+<header>
+    <div class="container">
     <div class="row">
-        <div class="col-9">
+        <div class="col-12 d-flex justify-content-between">
             <div class="logo">
                 <img src="../assets/boolflix.png" alt="logo">
             </div>
-        </div>
-        <div class="col-3">
-            <input @keyup.enter="getMerged" v-model="inputSearch" type="text">
-            <button @click="getMerged">Cerca</button>
+            <div class="d-flex align-items-center">
+                <div class="search-container d-flex align-items-center">
+                    <input placeholder="Cerca un titolo" @keyup.enter="getMerged" v-model="inputSearch" type="text">
+                    <button class="btn btn-light my_btn ms-3" type="submit" @click="getMerged">Cerca</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+</header>
 </template>
 
 <script>
@@ -76,5 +80,27 @@ export default {
 </script>
 
 <style lang="scss">
+header {
+	background-color: #111111;
+	.logo {
+		width: 20%;
+		img {
+		width: 100%;
+	}
+	}
+	.search-container {
+		height: 30%;
+	}
+	#search {
+		height: 100%;
+		font-size: 0.9rem;
+	}
+	.my_btn {
+		font-size: 0.8rem;
+		height: 100%;
+		padding: 0 1em;
+	}
+}
+
 
 </style>
