@@ -40,4 +40,8 @@ export default {
   @import "~bootstrap/scss/bootstrap";
   @import '~mdb-ui-kit/css/mdb.min.css';
   @import "./assets/style.scss";
+
+  body {
+    background-color: #1B1B1B;
+  }
 </style>

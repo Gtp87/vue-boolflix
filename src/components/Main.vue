@@ -11,6 +11,7 @@
             :vote="movie.vote_average"
             :image="`https://image.tmdb.org/t/p/w342${movie.poster_path}`"
             :poster="movie.poster_path"
+            :overview="movie.overview"
             />
             </div>
         </div>
@@ -25,6 +26,7 @@
 			:vote="serie.vote_average"
             :image="`https://image.tmdb.org/t/p/w342${serie.poster_path}`"
             :poster="serie.poster_path"
+            :overview="serie.overview"
             />
         </div>
     </div>
@@ -54,4 +56,7 @@ export default {
 
 <style lang="scss">
 @import "../assets/style.scss";
+main {
+    color: white;
+}
 </style>
