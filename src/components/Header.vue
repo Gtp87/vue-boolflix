@@ -1,9 +1,16 @@
 <template>
 <div class="container-fluid">
+    <div class="row">
+        <div class="col-9">
+            <div class="logo">
+                <img src="../assets/boolflix.png" alt="logo">
+            </div>
+        </div>
         <div class="col-3">
             <input @keyup.enter="getMerged" v-model="inputSearch" type="text">
             <button @click="getMerged">Cerca</button>
         </div>
+    </div>
 </div>
 </template>
 

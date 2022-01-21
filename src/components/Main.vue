@@ -10,6 +10,7 @@
             :language="movie.original_language"
             :vote="movie.vote_average"
             :image="`https://image.tmdb.org/t/p/w342${movie.poster_path}`"
+            :poster="movie.poster_path"
             />
             </div>
         </div>
@@ -23,6 +24,7 @@
 			:language="serie.original_language"
 			:vote="serie.vote_average"
             :image="`https://image.tmdb.org/t/p/w342${serie.poster_path}`"
+            :poster="serie.poster_path"
             />
         </div>
     </div>

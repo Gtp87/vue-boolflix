@@ -1,7 +1,8 @@
 <template>
 <div class="col">
     <div class="card-item">
-        <img :src="image" :alt="title">
+        <img v-if="poster" :src="image" :alt="title">
+        <img v-else src="../assets/movie.png" alt="title">
         <span>Titolo: {{title}}</span>
         <span>Titolo originale: {{originalTitle}}</span>
         <span>Lingua: <i :class="'flag flag-' + flags(language)"></i></span>
@@ -24,7 +25,8 @@ export default {
         'image',
         'originalTitle',
         'language',
-        'vote'
+        'vote',
+        'poster'
     ],
     methods:{
         flags(language) {
@@ -39,6 +41,8 @@ export default {
                     return 'cn';
                 case 'ur':
                     return 'pk';
+                case 'hi':
+                    return 'in';
                 default:
                     return language;
             }
