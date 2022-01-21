@@ -14,7 +14,7 @@
                 <span>Voto: </span>
                 <span><i v-for="(numStar) in 5" 
                 :key="numStar" 
-                :class="(numStar <= fiveStarVote(vote)) ? 'fas fa-star' : 'far fa-star'"></i></span>
+                :class="(numStar <= fiveStarVote(vote)) ? 'bi-star-fill' : 'bi-star'"></i></span>
             </div>
             <span class="info-overview">Trama: {{(overview != "") ? overview : 'nessuna descrizione'}}</span>
         </div>
@@ -63,6 +63,7 @@ export default {
 
 <style lang="scss">
 @import "../assets/style.scss";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
 .col {
     padding: 1em;
     .card-item {
@@ -98,8 +99,7 @@ export default {
     .card-item:hover .info-hover {
         display: block;
     }
-
-    .fa-star {
+    [class^=bi-star] {
         color: yellow;
     }
 }
