@@ -6,17 +6,17 @@
             <img v-else src="../assets/movie.png" alt="title">
         </div>
         <div class="info-hover p-3">
-            <span>Titolo: {{title}}</span>
-            <span>Titolo originale: {{originalTitle}}</span>
-            <span>Lingua: <i :class="'flag flag-' + flags(language)"></i></span>
+            <span class="info-title">Titolo: {{title}}</span>
+            <span class="info-original">Titolo originale: {{originalTitle}}</span>
+            <span class="info-language">Lingua: <i :class="'flag flag-' + flags(language)"></i></span>
             <!-- <span>Voto: {{fiveStarVote(vote)}}</span> -->
-            <div class="vote">
+            <div class="info-vote">
                 <span>Voto: </span>
-                <span><i v-for="numStar in 5" 
+                <span><i v-for="(numStar) in 5" 
                 :key="numStar" 
                 :class="(numStar <= fiveStarVote(vote)) ? 'fas fa-star' : 'far fa-star'"></i></span>
             </div>
-            <span>Trama: {{overview}}</span>
+            <span class="info-overview">Trama: {{(overview != "") ? overview : 'nessuna descrizione'}}</span>
         </div>
     </div>
 </div>
@@ -86,15 +86,21 @@ export default {
         display: none;
         width: 100%;
         height: 100%;
+        overflow: auto;
         cursor: pointer;
-    }
-    span {
+        span {
         display: block;
         text-align: center;
+        }
     }
+    
 }
     .card-item:hover .info-hover {
         display: block;
+    }
+
+    .fa-star {
+        color: yellow;
     }
 }
 </style>
